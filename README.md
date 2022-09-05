@@ -1,9 +1,9 @@
-# Random Quote Machine
+# [Random Quote Machine](https://main.d33p7s43ba5uy9.amplifyapp.com/)
 
 This project is created using React.
 
 ## Demo Page
-![Demo_of_Website]()
+![Demo_of_Website](https://github.com/alokik98/random-quote-machine/blob/main/public/Demo.png)
 
 ## How to Run the Project in Local Machine
 
