@@ -21,7 +21,7 @@ const Quote = () => {
   return (
     <div id='quote-box'>
       <div className='quote'>
-        <p id='text'>"{quote.text}"</p>
+        <p id='text'>{quote.text}</p>
         <p id='author'> - {quote.author}</p>
       </div>
       <div className='buttons'>
