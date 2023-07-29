@@ -1,4 +1,5 @@
-import React,{useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import "./Quote.css";
 
 const Quote = () => {
@@ -8,16 +9,17 @@ const Quote = () => {
   const fetchNewQuote = async () => {
     const url = 'https://type.fit/api/quotes';
 
-    const res = await fetch(url);
-    const data = await res.json();
-    let index = Math.floor(Math.random() * 1644);
+    const res = await axios.get(url);
+    const data = res.data;
+    let index = Math.floor(Math.random() * 17);
     setQuote(data[index]);
   }
 
   useEffect(() => {
     fetchNewQuote();
-  },[])
-  
+  }, [])
+
+  console.log(quote)
   return (
     <div id='quote-box'>
       <div className='quote'>
@@ -25,7 +27,7 @@ const Quote = () => {
         <p id='author'> - {quote.author}</p>
       </div>
       <div className='buttons'>
-        <button id='new-quote' onClick={()=>fetchNewQuote()}>New Quote</button>
+        <button id='new-quote' onClick={() => fetchNewQuote()}>New Quote</button>
         <a href='https://twitter.com/intent/tweet' id='tweet-quote' target='_blank' rel="noreferrer">
           Tweet <img src='/twitter.png' alt='tweet' />
         </a>
